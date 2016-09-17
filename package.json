@@ -1,5 +1,5 @@
 {
-  "name": "WSTunnel Client Electron GUI",
+  "name": "wstunnel-client-electron",
   "version": "1.0.0",
   "description": "Start mhzed/wstunnel client over Electron GUI",
   "main": "main.js",
