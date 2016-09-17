@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>WSTunnel Client</title>
   </head>
+
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <div class="container">
+      <div class="card-panel">
+        <h1 class="center-align header">WSTunnel Client</h1>
+        <!-- All of the Node.js APIs are available in this renderer process. -->
+        <div class="row">
+          <form id="main-form" class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="remote-server" type="text" class="validate" placeholder="wss://neu.wtako.net/tunnel" required>
+                <label for="remote-server">Remote server</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="local-port" type="number" class="validate" placeholder="1024-65535 (Default: 30000)" maxlength="5" min="1" max="65535" step="1">
+                <label for="local-port">Local port</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button id="toggle-btn" class="btn btn-large waves-effect waves-light" name="action" style="width: 100%;"><span id="button-text">Start</span>
+                  <i class="material-icons right">power_settings_new</i>
+                </button>
+              </div>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+          </form>
+          <div class="col s12">
+            <h6 class="label-header">Console output</h6>
+            <pre id="console-output-container" style="height: 21em;"><code id="console-output"></code></pre>
+          </div>
+        </div>
+      </div>
+      <h6 style="float: left; margin-top: -0.3em;" id="star-container">
+        <a class="github-button" href="https://github.com/Saren-Arterius/wstunnel-client-electron" data-icon="octicon-star" data-count-href="/Saren-Arterius/wstunnel-client-electron/stargazers" data-count-api="/repos/Saren-Arterius/wstunnel-client-electron#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Saren-Arterius/wstunnel-client-electron on GitHub">Star</a>
+      </h6>
+      <h6 style="float: right" class="info-text">Powered by&nbsp;<a href="http://electron.atom.io/">Electron</a></h6>
+    </div>
+
+    <script>
+      if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://buttons.github.io/buttons.js"></script>
+    <script>
+      if (window.module) module = window.module;
+    </script>
+    <script>
+      require('./renderer.js')
+    </script>
   </body>
 
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
 </html>

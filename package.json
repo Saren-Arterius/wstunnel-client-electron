@@ -1,14 +1,14 @@
 {
-  "name": "electron-quick-start",
+  "name": "WSTunnel Client Electron GUI",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Start mhzed/wstunnel client over Electron GUI",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron/electron-quick-start.git"
+    "url": "git+https://github.com/Saren-Arterius/wstunnel-client-electron"
   },
   "keywords": [
     "Electron",
@@ -16,13 +16,16 @@
     "start",
     "tutorial"
   ],
-  "author": "GitHub",
+  "author": "Saren",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
+    "url": "https://github.com/Saren-Arterius/wstunnel-client-electron/issues"
   },
-  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "homepage": "https://github.com/Saren-Arterius/wstunnel-client-electron#readme",
   "devDependencies": {
     "electron": "^1.3.4"
+  },
+  "dependencies": {
+    "wstunnel": "^1.1.1"
   }
 }
